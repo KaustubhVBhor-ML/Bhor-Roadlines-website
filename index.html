@@ -1,0 +1,1336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Bhor Roadlines</title>
+
+<!-- FONT AWESOME -->
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+<style>
+
+/* ================= GLOBAL ================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+    scroll-behavior:smooth;
+}
+
+html,
+body{
+    width:100%;
+    overflow-x:hidden;
+}
+
+body{
+    color:white;
+    background:#000;
+}
+
+img{
+    max-width:100%;
+    height:auto;
+    display:block;
+}
+
+/* ================= NAVBAR ================= */
+
+.navbar{
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:90px;
+
+    padding:0 5%;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    background:rgba(0,0,0,0.30);
+
+    backdrop-filter:blur(12px);
+
+    z-index:1000;
+}
+
+/* LOGO */
+
+.logo{
+    display:flex;
+    align-items:center;
+    height:100%;
+}
+
+.logo img{
+    max-height:75px;
+    width:auto;
+    object-fit:contain;
+}
+
+/* NAV LINKS */
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:28px;
+
+    transition:0.3s ease;
+}
+
+.nav-links a{
+    position:relative;
+
+    text-decoration:none;
+
+    color:white;
+
+    font-size:15px;
+    font-weight:500;
+
+    transition:0.3s ease;
+}
+
+.nav-links a::after{
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    bottom:-5px;
+
+    width:0%;
+    height:2px;
+
+    background:#63B3ED;
+
+    transition:0.3s ease;
+}
+
+.nav-links a:hover::after{
+    width:100%;
+}
+
+/* CALL BUTTON */
+
+.navbar-login-btn{
+    display:flex;
+    align-items:center;
+    gap:8px;
+
+    background:#2563EB;
+
+    color:white;
+
+    border:none;
+
+    padding:12px 24px;
+
+    border-radius:35px;
+
+    cursor:pointer;
+
+    font-size:15px;
+    font-weight:700;
+
+    transition:0.3s ease;
+}
+
+.navbar-login-btn:hover{
+    background:#1D4ED8;
+
+    transform:translateY(-2px);
+
+    box-shadow:
+    0 8px 18px rgba(37,99,235,0.35);
+}
+
+/* MOBILE MENU */
+
+.menu-toggle{
+    display:none;
+
+    font-size:28px;
+
+    cursor:pointer;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    min-height:100vh;
+
+    background:
+    linear-gradient(
+    rgba(0,0,0,0.45),
+    rgba(0,0,0,0.45)),
+    url('Home bg.png');
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    gap:60px;
+
+    padding:140px 5% 80px;
+
+    position:relative;
+}
+
+/* HERO CONTENT */
+
+.hero-content{
+    flex:1;
+    max-width:700px;
+}
+
+.top-heading{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:10px 18px;
+
+    border-radius:30px;
+
+    background:
+    rgba(49,130,206,0.12);
+
+    border:
+    1px solid rgba(255,255,255,0.18);
+
+    backdrop-filter:blur(8px);
+
+    margin-bottom:24px;
+
+    font-size:14px;
+    font-weight:500;
+
+    letter-spacing:0.5px;
+}
+
+.hero-content h1{
+    font-size:72px;
+    line-height:1.05;
+    font-weight:900;
+
+    margin-bottom:24px;
+}
+
+.hero-content p{
+    max-width:650px;
+
+    color:#F3F4F6;
+
+    font-size:19px;
+    line-height:1.9;
+}
+
+/* HERO BUTTONS */
+
+.hero-buttons{
+    margin-top:35px;
+
+    display:flex;
+    align-items:center;
+    gap:15px;
+
+    flex-wrap:wrap;
+}
+
+.hero-btn{
+    padding:15px 30px;
+
+    border:none;
+    border-radius:40px;
+
+    font-size:15px;
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:0.3s ease;
+}
+
+.secondary-btn{
+    background:transparent;
+
+    border:
+    1px solid rgba(255,255,255,0.8);
+
+    color:white;
+}
+
+.secondary-btn:hover{
+    background:white;
+    color:black;
+}
+
+/* ================= FORM ================= */
+
+.form-container{
+    width:100%;
+    max-width:390px;
+
+    background:
+    rgba(255,255,255,0.94);
+
+    padding:32px 28px;
+
+    border-radius:22px;
+
+    backdrop-filter:blur(14px);
+
+    box-shadow:
+    0 10px 35px rgba(0,0,0,0.30);
+
+    color:black;
+}
+
+.form-container h2{
+    text-align:center;
+
+    color:#1A365D;
+
+    font-size:30px;
+    font-weight:800;
+
+    margin-bottom:25px;
+}
+
+.form-group{
+    margin-bottom:18px;
+}
+
+.form-group label{
+    display:block;
+
+    margin-bottom:8px;
+
+    color:#111827;
+
+    font-size:14px;
+    font-weight:700;
+}
+
+.form-group input,
+.form-group select{
+    width:100%;
+
+    height:52px;
+
+    padding:0 15px;
+
+    border-radius:12px;
+
+    border:1px solid #D1D5DB;
+
+    outline:none;
+
+    background:white;
+
+    font-size:15px;
+
+    transition:0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus{
+    border-color:#3182CE;
+
+    box-shadow:
+    0 0 0 3px rgba(49,130,206,0.15);
+}
+
+/* SUBMIT BUTTON */
+
+.submit-btn{
+    width:100%;
+
+    margin-top:12px;
+
+    background:#1A365D;
+
+    color:white;
+
+    border:none;
+
+    padding:15px;
+
+    border-radius:40px;
+
+    font-size:15px;
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:0.3s ease;
+}
+
+.submit-btn:hover{
+    background:#3182CE;
+}
+
+/* SCROLL BUTTON */
+
+.section-btn{
+    position:absolute;
+
+    bottom:30px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:58px;
+    height:58px;
+
+    border:none;
+    border-radius:50%;
+
+    background:white;
+
+    color:#1A365D;
+
+    font-size:22px;
+
+    cursor:pointer;
+
+    animation:float 2s infinite;
+}
+
+@keyframes float{
+
+    0%{
+        transform:
+        translateX(-50%)
+        translateY(0);
+    }
+
+    50%{
+        transform:
+        translateX(-50%)
+        translateY(10px);
+    }
+
+    100%{
+        transform:
+        translateX(-50%)
+        translateY(0);
+    }
+}
+
+/* ================= SERVICES ================= */
+
+.services{
+    padding:90px 5%;
+
+    background:
+    linear-gradient(
+    to bottom,
+    #081420,
+    #10263B);
+}
+
+.services h2{
+    text-align:center;
+
+    font-size:42px;
+
+    margin-bottom:20px;
+}
+
+.services-text{
+    text-align:center;
+
+    max-width:700px;
+
+    margin:0 auto 50px;
+
+    color:#D1D5DB;
+
+    line-height:1.7;
+}
+
+.service-grid{
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(250px,1fr));
+
+    gap:25px;
+}
+
+.service-card{
+    text-align:center;
+
+    background:#13283D;
+
+    padding:35px 25px;
+
+    border-radius:18px;
+
+    transition:0.3s ease;
+}
+
+.service-card:hover{
+    transform:translateY(-8px);
+}
+
+.service-card i{
+    color:#63B3ED;
+
+    font-size:45px;
+
+    margin-bottom:20px;
+}
+
+.service-card h3{
+    margin-bottom:15px;
+}
+
+/* ================= FOOTER ================= */
+
+.footer{
+    background:
+    linear-gradient(
+    rgba(4,15,28,0.92),
+    rgba(4,15,28,0.96)),
+    url('https://images.unsplash.com/photo-1519003722824-194d4455a60c?q=80&w=2070&auto=format&fit=crop');
+
+    background-size:cover;
+    background-position:center;
+
+    padding:70px 5% 20px;
+
+    color:white;
+}
+
+.footer-container{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    gap:35px;
+}
+
+.footer-box h1,
+.footer-box h2{
+    color:#63B3ED;
+
+    margin-bottom:18px;
+}
+
+.footer-box p{
+    color:#D1D5DB;
+
+    line-height:1.8;
+}
+
+.contact-row{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    gap:40px;
+
+    flex-wrap:wrap;
+}
+
+.social-icons{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    gap:15px;
+}
+
+.social-icons a{
+    width:45px;
+    height:45px;
+
+    border-radius:50%;
+
+    background:
+    rgba(255,255,255,0.08);
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    text-decoration:none;
+
+    transition:0.3s ease;
+}
+
+.social-icons a:hover{
+    background:#3182CE;
+
+    transform:translateY(-4px);
+}
+
+.social-icons i{
+    color:white;
+
+    font-size:18px;
+}
+
+.footer-bottom{
+    margin-top:45px;
+
+    border-top:
+    1px solid rgba(255,255,255,0.1);
+
+    padding-top:20px;
+
+    text-align:center;
+
+    color:#9CA3AF;
+}
+
+/* ================= LARGE TABLET ================= */
+
+@media(max-width:1100px){
+
+    .hero{
+        gap:40px;
+
+        padding:130px 5% 70px;
+    }
+
+    .hero-content h1{
+        font-size:58px;
+    }
+
+    .hero-content p{
+        font-size:18px;
+    }
+
+    .form-container{
+        max-width:360px;
+    }
+}
+
+/* ================= TABLET ================= */
+
+@media(max-width:950px){
+
+    .menu-toggle{
+        display:block;
+        z-index:1001;
+    }
+
+    .nav-links{
+        position:absolute;
+
+        top:90px;
+        left:0;
+
+        width:100%;
+
+        background:
+        rgba(0,0,0,0.95);
+
+        backdrop-filter:blur(10px);
+
+        flex-direction:column;
+
+        align-items:center;
+
+        gap:25px;
+
+        padding:30px 0;
+
+        display:none;
+    }
+
+    .nav-links.active{
+        display:flex;
+    }
+
+    .navbar-login-btn{
+        display:none;
+    }
+
+    .hero{
+        flex-direction:column;
+
+        justify-content:center;
+
+        text-align:center;
+
+        gap:50px;
+
+        padding:130px 5% 80px;
+    }
+
+    .hero-content{
+        width:100%;
+        max-width:100%;
+    }
+
+    .hero-content h1{
+        font-size:50px;
+        line-height:1.1;
+    }
+
+    .hero-content p{
+        margin:auto;
+
+        font-size:17px;
+
+        line-height:1.8;
+    }
+
+    .hero-buttons{
+        justify-content:center;
+    }
+
+    .form-container{
+        width:100%;
+        max-width:450px;
+    }
+
+    .services{
+        padding:80px 5%;
+    }
+
+    .services h2{
+        font-size:36px;
+    }
+
+    .contact-row{
+        gap:20px;
+    }
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:600px){
+
+    .navbar{
+        height:80px;
+    }
+
+    .logo img{
+        max-height:60px;
+    }
+
+    .menu-toggle{
+        font-size:24px;
+    }
+
+    .nav-links{
+        top:80px;
+    }
+
+    .hero{
+        min-height:auto;
+
+        padding:
+        120px 5% 70px;
+
+        gap:40px;
+    }
+
+    .top-heading{
+        font-size:11px;
+
+        padding:8px 14px;
+
+        margin-bottom:18px;
+    }
+
+    .hero-content h1{
+        font-size:36px;
+        line-height:1.15;
+    }
+
+    .hero-content p{
+        font-size:15px;
+        line-height:1.7;
+    }
+
+    .hero-buttons{
+        margin-top:28px;
+    }
+
+    .hero-btn{
+        width:100%;
+        max-width:260px;
+
+        padding:14px 20px;
+
+        font-size:14px;
+    }
+
+    .form-container{
+        padding:24px 20px;
+
+        border-radius:18px;
+    }
+
+    .form-container h2{
+        font-size:25px;
+    }
+
+    .form-group input,
+    .form-group select{
+        height:48px;
+
+        font-size:14px;
+    }
+
+    .submit-btn{
+        padding:14px;
+
+        font-size:14px;
+    }
+
+    .section-btn{
+        width:50px;
+        height:50px;
+
+        font-size:18px;
+
+        bottom:20px;
+    }
+
+    .services{
+        padding:70px 5%;
+    }
+
+    .services h2{
+        font-size:28px;
+    }
+
+    .services-text{
+        font-size:14px;
+    }
+
+    .service-grid{
+        gap:18px;
+    }
+
+    .service-card{
+        padding:28px 20px;
+    }
+
+    .service-card i{
+        font-size:38px;
+    }
+
+    .service-card h3{
+        font-size:20px;
+    }
+
+    .service-card p{
+        font-size:14px;
+        line-height:1.7;
+    }
+
+    .footer{
+        padding:60px 5% 20px;
+    }
+
+    .footer-box h1{
+        font-size:30px;
+    }
+
+    .footer-box h2{
+        font-size:24px;
+    }
+
+    .footer-box p{
+        font-size:14px;
+    }
+
+    .contact-row{
+        flex-direction:column;
+        gap:14px;
+    }
+
+    .social-icons{
+        gap:12px;
+    }
+
+    .social-icons a{
+        width:42px;
+        height:42px;
+    }
+
+    .footer-bottom{
+        font-size:13px;
+    }
+}
+
+/* ================= SMALL MOBILE ================= */
+
+@media(max-width:400px){
+
+    .hero-content h1{
+        font-size:30px;
+    }
+
+    .hero-content p{
+        font-size:14px;
+    }
+
+    .form-container{
+        padding:22px 16px;
+    }
+
+    .services h2{
+        font-size:24px;
+    }
+
+    .service-card{
+        padding:24px 16px;
+    }
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav class="navbar">
+
+    <div class="logo">
+
+        <img src="Logo.png"
+        alt="Company Logo">
+
+    </div>
+
+    <div class="menu-toggle"
+    onclick="toggleMenu()">
+
+        <i class="fa-solid fa-bars"></i>
+
+    </div>
+
+    <div class="nav-links"
+    id="navLinks">
+
+        <a href="index.html">Home</a>
+
+        <a href="#services">Services</a>
+
+        <a href="Pricing.html">Pricing</a>
+
+        <a href="About Us.html">About Us</a>
+
+        <a href="Contact Us.html">Contact Us</a>
+
+    </div>
+
+    <button class="navbar-login-btn"
+    onclick="window.location.href='tel:+917045537597'">
+
+        <i class="fa-solid fa-phone"></i>
+
+        Call Now
+
+    </button>
+
+</nav>
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="top-heading">
+            FAST • SECURE • NATIONAL DELIVERIES
+        </div>
+
+        <h1>BHOR ROADLINES</h1>
+
+        <p>
+            EXCELLENCE IN LOGISTICS,<br>
+            DRIVING YOUR PROMISES ACROSS ROADS.<br>
+            Reliable, safe, and fast logistics services
+            for all your business transportation needs.
+        </p>
+
+        <div class="hero-buttons">
+
+            <button class="hero-btn secondary-btn"
+            onclick="serviceBtn()">
+
+                OUR SERVICES
+
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- FORM -->
+
+    <div class="form-container">
+
+        <h2>Book Now</h2>
+
+        <div class="form-group">
+
+            <label>From</label>
+
+            <input type="text"
+            id="fromLocation"
+            placeholder="Enter Pickup Location">
+
+        </div>
+
+        <div class="form-group">
+
+            <label>To</label>
+
+            <input type="text"
+            id="toLocation"
+            placeholder="Enter Destination">
+
+        </div>
+
+        <div class="form-group">
+
+            <label>Departure Date</label>
+
+            <input type="date"
+            id="departureDate">
+
+        </div>
+
+        <div class="form-group">
+
+            <label>Weight / Volume</label>
+
+            <input type="text"
+            id="weight"
+            placeholder="Enter Weight">
+
+        </div>
+
+        <div class="form-group">
+
+            <label>Service Type</label>
+
+            <select id="serviceType">
+
+                <option selected disabled>
+                    Select Service Type
+                </option>
+
+                <option>
+                    Goods Delivery Across City
+                </option>
+
+                <option>
+                    Event Transportation
+                </option>
+
+                <option>
+                    Warehouse Supply
+                </option>
+
+                <option>
+                    InterCity Transport
+                </option>
+
+            </select>
+
+        </div>
+
+        <button class="submit-btn"
+        onclick="submitBooking()">
+
+            FIND SERVICES
+
+        </button>
+
+    </div>
+
+    <!-- SCROLL -->
+
+    <button class="section-btn"
+    onclick="scrollSection()">
+
+        <i class="fa-solid fa-angle-down"></i>
+
+    </button>
+
+</section>
+
+<!-- SERVICES -->
+
+<section class="services"
+id="services">
+
+    <h2>ROAD TRANSPORT SERVICES</h2>
+
+    <p class="services-text">
+
+        Professional road transport solutions
+        designed for safety, speed and dependable
+        delivery operations.
+
+    </p>
+
+    <div class="service-grid">
+
+        <div class="service-card">
+
+            <i class="fa-solid fa-truck"></i>
+
+            <h3>Goods Delivery</h3>
+
+            <p>
+                Fast and secure transportation
+                of commercial goods.
+            </p>
+
+        </div>
+
+        <div class="service-card">
+
+            <i class="fa-solid fa-suitcase-rolling"></i>
+
+            <h3>Event Transportation</h3>
+
+            <p>
+                Safe and timely transportation
+                of event materials and luggage.
+            </p>
+
+        </div>
+
+        <div class="service-card">
+
+            <i class="fa-solid fa-warehouse"></i>
+
+            <h3>Warehouse Supply</h3>
+
+            <p>
+                Efficient logistics support
+                for warehouse transport.
+            </p>
+
+        </div>
+
+        <div class="service-card">
+
+            <i class="fa-solid fa-location-dot"></i>
+
+            <h3>City Transport</h3>
+
+            <p>
+                Reliable intra-city
+                transport services.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer class="footer">
+
+    <div class="footer-container">
+
+        <div class="footer-box">
+
+            <h1>
+                <b>Bhor Roadlines</b>
+            </h1>
+
+            <p>
+                Reliable and secure road
+                transport solutions for
+                fast delivery operations.
+            </p>
+
+        </div>
+
+        <div class="footer-box">
+
+            <h2>
+                <b>Contact Info</b>
+            </h2>
+
+            <div class="contact-row">
+
+                <p>
+                    <i class="fa-solid fa-phone"></i>
+                    +91 7045537597
+                </p>
+
+                <p>
+                    <i class="fa-solid fa-envelope"></i>
+                    vikasbhor83@gmail.com
+                </p>
+
+                <p>
+                    <i class="fa-solid fa-location-dot"></i>
+                    Mumbai, India
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="footer-box">
+
+            <h2>
+                <b>Follow Us</b>
+            </h2>
+
+            <div class="social-icons">
+
+                <a href="https://facebook.com/share/1Dtjre6CSL/"
+                target="_blank">
+
+                    <i class="fa-brands fa-facebook-f"></i>
+
+                </a>
+
+                <a href="https://instagram.com/bhor.vikas_official"
+                target="_blank">
+
+                    <i class="fa-brands fa-instagram"></i>
+
+                </a>
+
+                <a href="mailto:vikasbhor83@gmail.com">
+
+                    <i class="fa-solid fa-envelope"></i>
+
+                </a>
+
+                <a href="https://wa.me/917045537597"
+                target="_blank">
+
+                    <i class="fa-brands fa-whatsapp"></i>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+
+        © 2026 Bhor Roadlines |
+        All Rights Reserved
+
+    </div>
+
+</footer>
+
+<!-- JAVASCRIPT -->
+
+<script>
+
+/* MOBILE MENU */
+
+function toggleMenu(){
+
+    document
+    .getElementById("navLinks")
+    .classList
+    .toggle("active");
+}
+
+/* SERVICES BUTTON */
+
+function serviceBtn(){
+
+    document
+    .getElementById("services")
+    .scrollIntoView({
+        behavior:"smooth"
+    });
+}
+
+/* WHATSAPP FORM */
+
+function submitBooking(){
+
+    let fromLocation =
+    document.getElementById("fromLocation").value;
+
+    let toLocation =
+    document.getElementById("toLocation").value;
+
+    let departureDate =
+    document.getElementById("departureDate").value;
+
+    let weight =
+    document.getElementById("weight").value;
+
+    let serviceType =
+    document.getElementById("serviceType").value;
+
+    let bookingMessage =
+`🚛 *NEW BOOKING REQUEST*
+
+📍 From: ${fromLocation}
+
+📍 To: ${toLocation}
+
+📅 Departure Date: ${departureDate}
+
+⚖️ Weight / Volume: ${weight}
+
+🛠 Service Type: ${serviceType}`;
+
+    let whatsappURL =
+`https://wa.me/918169008395?text=${encodeURIComponent(bookingMessage)}`;
+
+    window.open(whatsappURL, "_blank");
+}
+
+/* SCROLL */
+
+function scrollSection(){
+
+    document
+    .getElementById("services")
+    .scrollIntoView({
+        behavior:"smooth"
+    });
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,1224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title>Bhor Roadlines Pricing</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#f5f7fb;
+    overflow-x:hidden;
+    color:#081120;
+    padding-top:0;
+}
+
+:root{
+    --primary:#ff6b00;
+    --dark:#081120;
+    --dark-blue:#0b1730;
+    --white:#ffffff;
+    --light:#f5f7fb;
+    --gray:#707070;
+    --border:#e5e7eb;
+}
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+.container{
+    width:100%;
+    max-width:1440px;
+    margin:auto;
+}
+
+/* ================= NAVBAR ================= */
+
+.navbar{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:90px;
+    padding:0 5%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:rgba(8,17,32,0.75);
+    backdrop-filter:blur(12px);
+    z-index:1000;
+}
+
+.logo{
+    height:100%;
+    display:flex;
+    align-items:center;
+}
+
+.logo img{
+    max-height:75px;
+    width:auto;
+    object-fit:contain;
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:28px;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:white;
+    font-size:15px;
+    position:relative;
+    transition:0.3s;
+}
+
+.nav-links a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-5px;
+    width:0%;
+    height:2px;
+    background:#63B3ED;
+    transition:0.3s;
+}
+
+.nav-links a:hover::after,
+.nav-links .active::after{
+    width:100%;
+}
+
+.navbar-login-btn{
+    background:#2563EB;
+    color:white;
+    border:none;
+    padding:12px 24px;
+    border-radius:35px;
+    cursor:pointer;
+    font-size:15px;
+    font-weight:600;
+    display:flex;
+    align-items:center;
+    gap:8px;
+    transition:0.3s;
+}
+
+.navbar-login-btn:hover{
+    background:#1D4ED8;
+    transform:translateY(-2px);
+    box-shadow:0 8px 18px rgba(37,99,235,0.35);
+}
+
+.menu-toggle{
+    display:none;
+    font-size:28px;
+    cursor:pointer;
+    color:white;
+}
+
+/* HERO */
+
+.hero{
+    position:relative;
+    min-height:850px;
+    display:flex;
+    align-items:flex-start;
+    justify-content:center;
+    padding-top:190px;
+    overflow:hidden;
+
+    background:
+    linear-gradient(rgba(0,0,0,0.55),
+    rgba(0,0,0,0.55)),
+
+    url('Pricing bg.png');
+
+    background-size:cover;
+    background-position:center;
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+    padding:0 100px;
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:60px;
+}
+
+.hero-left{
+    width:55%;
+}
+
+.hero-right{
+    width:40%;
+    display:flex;
+    flex-direction:column;
+    gap:25px;
+}
+
+.hero-content span{
+    color:var(--primary);
+    font-size:22px;
+    font-weight:700;
+}
+
+.hero-content h1{
+    font-size:82px;
+    line-height:1.1;
+    color:white;
+    margin:20px 0;
+    font-weight:800;
+    word-break:break-word;
+}
+
+.hero-content h1 .orange{
+    color:var(--primary);
+}
+
+.hero-content p{
+    font-size:24px;
+    line-height:1.8;
+    color:rgba(255,255,255,0.85);
+    max-width:620px;
+}
+
+.hero-box{
+    padding:40px;
+    border-radius:22px;
+    background:rgba(255,255,255,0.06);
+    backdrop-filter:blur(8px);
+    border:1px solid rgba(255,255,255,0.08);
+}
+
+.hero-box i{
+    font-size:40px;
+    color:var(--primary);
+    margin-bottom:20px;
+}
+
+.hero-box h3{
+    font-size:24px;
+    margin-bottom:12px;
+    color:white;
+}
+
+.hero-box p{
+    font-size:15px;
+    line-height:1.7;
+    color:rgba(255,255,255,0.8);
+}
+
+/* DEPENDS */
+
+.depends{
+    padding:100px 80px;
+    background:white;
+    text-align:center;
+}
+
+.mini-title{
+    color:var(--primary);
+    font-weight:700;
+    margin-bottom:20px;
+}
+
+.depends h2{
+    font-size:52px;
+    margin-bottom:60px;
+}
+
+.depends h2 span{
+    color:var(--primary);
+}
+
+.icon-grid{
+    display:grid;
+    grid-template-columns:repeat(7,1fr);
+    gap:20px;
+}
+
+.icon-card{
+    padding:30px 15px;
+    border-right:1px solid #ddd;
+}
+
+.icon-card:last-child{
+    border:none;
+}
+
+.icon-card i{
+    font-size:50px;
+    color:var(--dark-blue);
+    margin-bottom:20px;
+}
+
+.icon-card p{
+    font-size:15px;
+    font-weight:500;
+}
+
+/* SOLUTIONS */
+
+.solutions{
+    padding:100px 80px;
+}
+
+.solutions h2{
+    text-align:center;
+    font-size:52px;
+    margin-bottom:70px;
+}
+
+.solutions h2 span{
+    color:var(--primary);
+}
+
+.solution-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:30px;
+}
+
+.solution-card{
+    background:white;
+    border-radius:22px;
+    padding:40px 30px;
+    box-shadow:0 10px 35px rgba(0,0,0,0.08);
+    transition:0.4s;
+    overflow:hidden;
+}
+
+.solution-card:hover{
+    transform:translateY(-10px);
+}
+
+.circle-icon{
+    width:80px;
+    height:80px;
+    border-radius:50%;
+    background:var(--primary);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin-bottom:30px;
+}
+
+.circle-icon i{
+    color:white;
+    font-size:32px;
+}
+
+.solution-card h3{
+    font-size:28px;
+    margin-bottom:20px;
+}
+
+.solution-card p{
+    color:var(--gray);
+    line-height:1.8;
+    margin-bottom:30px;
+    word-break:break-word;
+}
+
+.quote-btn{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    height:55px;
+    border-radius:12px;
+    background:#f5f7fb;
+    padding:0 20px;
+    text-decoration:none;
+    color:var(--dark);
+    font-weight:600;
+    transition:0.3s;
+}
+
+.quote-btn:hover{
+    background:var(--primary);
+    color:white;
+}
+
+/* CTA */
+
+.cta{
+    background:linear-gradient(90deg,#081120,#0b1730);
+    padding:50px 80px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:30px;
+}
+
+.cta h2{
+    font-size:42px;
+    color:white;
+}
+
+.cta h2 span{
+    color:var(--primary);
+}
+
+.cta p{
+    color:rgba(255,255,255,0.8);
+    margin-top:10px;
+}
+
+.cta-buttons{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.cta-buttons a{
+    padding:18px 40px;
+    border-radius:12px;
+    text-decoration:none;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.call-now{
+    border:2px solid white;
+    color:white;
+}
+
+.call-now:hover{
+    background:white;
+    color:black;
+}
+
+.whatsapp{
+    background:var(--primary);
+    color:white;
+}
+
+.whatsapp:hover{
+    transform:translateY(-3px);
+}
+
+/* TRUST BAR */
+
+.trust-bar{
+    background:white;
+    padding:35px 80px;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:30px;
+}
+
+.trust-item{
+    display:flex;
+    gap:15px;
+    align-items:center;
+}
+
+.trust-item i{
+    font-size:38px;
+    color:var(--dark-blue);
+}
+
+.trust-item h4{
+    font-size:17px;
+}
+
+.trust-item p{
+    color:gray;
+    font-size:14px;
+}
+
+/* ================= FOOTER ================= */
+
+.footer{
+    background:
+    linear-gradient(rgba(4,15,28,0.92),
+    rgba(4,15,28,0.96)),
+    url('https://images.unsplash.com/photo-1519003722824-194d4455a60c?q=80&w=2070&auto=format&fit=crop');
+
+    background-size:cover;
+    background-position:center;
+
+    padding:70px 5% 20px;
+
+    color:white;
+}
+
+.footer-container{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    gap:35px;
+}
+
+.footer-box{
+    width:100%;
+}
+
+.footer-box h1{
+    font-size:42px;
+    margin-bottom:18px;
+}
+
+.footer-box h2{
+    color:#63B3ED;
+    margin-bottom:18px;
+}
+
+.footer-box p{
+    color:#D1D5DB;
+    line-height:1.8;
+}
+
+.contact-row{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:40px;
+    flex-wrap:wrap;
+}
+
+.contact-row p{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    word-break:break-word;
+}
+
+.contact-row i{
+    color:#63B3ED;
+}
+
+.social-icons{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.social-icons a{
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    background:rgba(255,255,255,0.08);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-decoration:none;
+    transition:0.3s;
+}
+
+.social-icons a:hover{
+    background:#3182CE;
+    transform:translateY(-4px);
+}
+
+.social-icons i{
+    color:white;
+    font-size:18px;
+}
+
+.footer-bottom{
+    margin-top:45px;
+    border-top:1px solid rgba(255,255,255,0.1);
+    padding-top:20px;
+    text-align:center;
+    color:#9CA3AF;
+    font-size:14px;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:1300px){
+
+    .hero-content{
+        padding:0 50px;
+    }
+
+    .hero-content h1{
+        font-size:68px;
+    }
+
+    .solution-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+@media(max-width:1100px){
+
+    .icon-grid{
+        grid-template-columns:repeat(3,1fr);
+    }
+
+    .trust-bar{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .hero-content{
+        padding:0 30px;
+        gap:40px;
+    }
+
+    .hero-content h1{
+        font-size:52px;
+    }
+
+    .hero-content p{
+        font-size:20px;
+    }
+}
+
+@media(max-width:768px){
+
+    .navbar{
+        height:80px;
+        padding:0 20px;
+    }
+
+    .logo img{
+        max-height:60px;
+    }
+
+    .menu-toggle{
+        display:block;
+    }
+
+    .nav-links{
+        position:absolute;
+        top:80px;
+        left:0;
+        width:100%;
+        background:#081120;
+        flex-direction:column;
+        padding:25px 0;
+        display:none;
+        gap:22px;
+    }
+
+    .nav-links.active{
+        display:flex;
+    }
+
+    .navbar-login-btn{
+        display:none;
+    }
+
+    .hero{
+        min-height:auto;
+        padding:130px 0 70px;
+    }
+
+    .hero-content{
+        flex-direction:column;
+        text-align:center;
+        padding:0 20px;
+        gap:35px;
+    }
+
+    .hero-left,
+    .hero-right{
+        width:100%;
+    }
+
+    .hero-content span{
+        font-size:18px;
+    }
+
+    .hero-content h1{
+        font-size:42px;
+        line-height:1.2;
+    }
+
+    .hero-content p{
+        font-size:16px;
+        line-height:1.7;
+        max-width:100%;
+    }
+
+    .hero-box{
+        padding:30px 22px;
+    }
+
+    .hero-box h3{
+        font-size:22px;
+    }
+
+    .depends,
+    .solutions,
+    .cta,
+    .trust-bar{
+        padding:60px 20px;
+    }
+
+    .depends h2,
+    .solutions h2{
+        font-size:36px;
+        line-height:1.3;
+    }
+
+    .icon-grid,
+    .solution-grid,
+    .trust-bar{
+        grid-template-columns:1fr;
+    }
+
+    .icon-card{
+        border:none;
+        padding:25px 10px;
+    }
+
+    .solution-card{
+        padding:35px 25px;
+    }
+
+    .solution-card h3{
+        font-size:24px;
+    }
+
+    .cta{
+        text-align:center;
+        justify-content:center;
+    }
+
+    .cta h2{
+        font-size:34px;
+    }
+
+    .cta-buttons{
+        width:100%;
+        flex-direction:column;
+    }
+
+    .cta-buttons a{
+        width:100%;
+        text-align:center;
+    }
+
+    .trust-item{
+        justify-content:flex-start;
+    }
+
+    .contact-row{
+        flex-direction:column;
+        gap:18px;
+    }
+
+    .footer-box h1{
+        font-size:34px;
+    }
+
+    .footer-box h2{
+        font-size:24px;
+    }
+}
+
+@media(max-width:480px){
+
+    .hero{
+        padding-top:120px;
+    }
+
+    .hero-content h1{
+        font-size:34px;
+    }
+
+    .depends h2,
+    .solutions h2{
+        font-size:30px;
+    }
+
+    .cta h2{
+        font-size:28px;
+    }
+
+    .hero-box{
+        padding:25px 18px;
+    }
+
+    .hero-box i{
+        font-size:32px;
+    }
+
+    .solution-card{
+        padding:28px 20px;
+    }
+
+    .circle-icon{
+        width:70px;
+        height:70px;
+    }
+
+    .circle-icon i{
+        font-size:28px;
+    }
+
+    .footer{
+        padding:60px 20px 20px;
+    }
+
+    .footer-box h1{
+        font-size:28px;
+    }
+
+    .footer-bottom{
+        font-size:12px;
+        line-height:1.6;
+    }
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav class="navbar">
+
+<div class="logo">
+<img src="Logo.png" alt="Company Logo">
+</div>
+
+<div class="menu-toggle" onclick="toggleMenu()">
+<i class="fa-solid fa-bars"></i>
+</div>
+
+<div class="nav-links" id="navLinks">
+
+<a href="index.html">Home</a>
+
+<a href="index.html#services">Services</a>
+
+<a href="Pricing.html" class="active">Pricing</a>
+
+<a href="About Us.html">About Us</a>
+
+<a href="Contact Us.html">Contact Us</a>
+
+</div>
+
+<button class="navbar-login-btn"
+onclick="window.location.href='tel:+917045537597'">
+
+<i class="fa-solid fa-phone"></i>
+Call Now
+
+</button>
+
+</nav>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="overlay"></div>
+
+<div class="hero-content">
+
+<div class="hero-left">
+
+<span>PRICING</span>
+
+<h1>
+Flexible Pricing,<br>
+<span class="orange">Built Around Your Needs</span>
+</h1>
+
+<p>
+At Bhor Roadlines, every shipment is unique.
+That's why we offer customized pricing based on your transport requirements.
+</p>
+
+</div>
+
+<div class="hero-right">
+
+<div class="hero-box">
+
+<i class="fa-solid fa-truck-fast"></i>
+
+<h3>Fast Delivery</h3>
+
+<p>
+Reliable and timely transportation services for every shipment.
+</p>
+
+</div>
+
+<div class="hero-box">
+
+<i class="fa-solid fa-shield-halved"></i>
+
+<h3>Safe Transport</h3>
+
+<p>
+Your goods are handled carefully with complete responsibility.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- DEPENDS -->
+
+<section class="depends">
+
+<p class="mini-title">TRANSPARENT & FAIR PRICING</p>
+
+<h2>Our <span>Pricing</span> Depends On</h2>
+
+<div class="icon-grid">
+
+<div class="icon-card">
+<i class="fa-solid fa-location-dot"></i>
+<p>Distance</p>
+</div>
+
+<div class="icon-card">
+<i class="fa-solid fa-box"></i>
+<p>Type of Goods</p>
+</div>
+
+<div class="icon-card">
+<i class="fa-solid fa-weight-scale"></i>
+<p>Load Weight</p>
+</div>
+
+<div class="icon-card">
+<i class="fa-solid fa-truck"></i>
+<p>Vehicle Type</p>
+</div>
+
+<div class="icon-card">
+<i class="fa-solid fa-dolly"></i>
+<p>Loading Support</p>
+</div>
+
+<div class="icon-card">
+<i class="fa-solid fa-clock"></i>
+<p>Urgency</p>
+</div>
+
+<div class="icon-card">
+<i class="fa-solid fa-file-invoice-dollar"></i>
+<p>Toll Charges</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- SOLUTIONS -->
+
+<section class="solutions">
+
+<h2>Our <span>Transport Solutions</span></h2>
+
+<div class="solution-grid">
+
+<div class="solution-card">
+
+<div class="circle-icon">
+<i class="fa-solid fa-city"></i>
+</div>
+
+<h3>Local Transport</h3>
+
+<p>
+Safe and quick transportation services within the city.
+</p>
+
+<a href="tel:+917045537597" class="quote-btn">
+
+Contact Us
+
+<i class="fa-solid fa-arrow-right"></i>
+
+</a>
+
+</div>
+
+<div class="solution-card">
+
+<div class="circle-icon">
+<i class="fa-solid fa-road"></i>
+</div>
+
+<h3>Outstation Delivery</h3>
+
+<p>
+Fast and secure long-distance transportation across India.
+</p>
+
+<a href="tel:+917045537597" class="quote-btn">
+
+Contact Us
+
+<i class="fa-solid fa-arrow-right"></i>
+
+</a>
+
+</div>
+
+<div class="solution-card">
+
+<div class="circle-icon">
+<i class="fa-solid fa-house"></i>
+</div>
+
+<h3>Event Transportation</h3>
+
+<p>
+Safe and timely transportation of wedding materials, decorations, luggage, and event essentials across cities.
+</p>
+
+<a href="tel:+917045537597" class="quote-btn">
+
+Contact Us
+
+<i class="fa-solid fa-arrow-right"></i>
+
+</a>
+
+</div>
+
+<div class="solution-card">
+
+<div class="circle-icon">
+<i class="fa-solid fa-warehouse"></i>
+</div>
+
+<h3>Business Logistics</h3>
+
+<p>
+Customized logistics solutions designed for businesses.
+</p>
+
+<a href="tel:+917045537597" class="quote-btn">
+
+Contact Us
+
+<i class="fa-solid fa-arrow-right"></i>
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- CTA -->
+
+<section class="cta">
+
+<div>
+
+<h2>Need a <span>Custom Quote?</span></h2>
+
+<p>
+Share your requirements with us.
+We'll provide the best transport pricing.
+</p>
+
+</div>
+
+<div class="cta-buttons">
+
+<a href="tel:+917045537597" class="call-now">
+
+<i class="fa-solid fa-phone"></i>
+Call Now
+
+</a>
+
+<a href="https://wa.me/917045537597" class="whatsapp">
+
+<i class="fa-brands fa-whatsapp"></i>
+WhatsApp Us
+
+</a>
+
+</div>
+
+</section>
+
+<!-- TRUST -->
+
+<section class="trust-bar">
+
+<div class="trust-item">
+
+<i class="fa-solid fa-shield-halved"></i>
+
+<div>
+<h4>GST Registered</h4>
+<p>Professional & Trusted Service</p>
+</div>
+
+</div>
+
+<div class="trust-item">
+
+<i class="fa-solid fa-users"></i>
+
+<div>
+<h4>Trusted Customers</h4>
+<p>Reliable Transport Solutions</p>
+</div>
+
+</div>
+
+<div class="trust-item">
+
+<i class="fa-solid fa-truck-fast"></i>
+
+<div>
+<h4>On-Time Delivery</h4>
+<p>Safe & Timely Shipment</p>
+</div>
+
+</div>
+
+<div class="trust-item">
+
+<i class="fa-solid fa-headset"></i>
+
+<div>
+<h4>24/7 Support</h4>
+<p>We're Always Here To Help</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer class="footer">
+
+<div class="footer-container">
+
+<div class="footer-box">
+
+<h1><b>Bhor Roadlines</b></h1>
+
+<p>
+Reliable and secure road transport solutions
+for fast and safe delivery operations.
+</p>
+
+</div>
+
+<div class="footer-box">
+
+<h2><b>Contact Info</b></h2>
+
+<div class="contact-row">
+
+<p>
+<i class="fa-solid fa-phone"></i>
++91 7045537597
+</p>
+
+<p>
+<i class="fa-solid fa-envelope"></i>
+vikasbhor83@gmail.com
+</p>
+
+<p>
+<i class="fa-solid fa-location-dot"></i>
+Mumbai, India
+</p>
+
+</div>
+
+</div>
+
+<div class="footer-box">
+
+<h2><b>Follow Us</b></h2>
+
+<div class="social-icons">
+
+<a href="https://facebook.com/share/1Dtjre6CSL/" target="_blank">
+<i class="fa-brands fa-facebook-f"></i>
+</a>
+
+<a href="https://instagram.com/bhor.vikas_official" target="_blank">
+<i class="fa-brands fa-instagram"></i>
+</a>
+
+<a href="mailto:vikasbhor83@gmail.com">
+<i class="fa-solid fa-envelope"></i>
+</a>
+
+<a href="https://wa.me/917045537597" target="_blank">
+<i class="fa-brands fa-whatsapp"></i>
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="footer-bottom">
+
+© 2026 Bhor Roadlines | All Rights Reserved
+
+</div>
+
+</footer>
+
+<script>
+
+function toggleMenu(){
+
+document
+.getElementById("navLinks")
+.classList
+.toggle("active");
+
+}
+
+</script>
+
+</body>
+</html>

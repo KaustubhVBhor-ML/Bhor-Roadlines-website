@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Contact Us | Bhor Roadlines</title>
+
+<!-- GOOGLE FONT -->
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+rel="stylesheet">
+
+<!-- FONT AWESOME -->
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:
+    linear-gradient(rgba(15,23,42,0.72),
+    rgba(15,23,42,0.72)),
+    url('Contact Us bg.png');
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+
+    min-height:100vh;
+
+    overflow-x:hidden;
+}
+
+/* ================= NAVBAR ================= */
+
+.navbar{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+
+    height:90px;
+
+    padding:0 5%;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    background:rgba(0,0,0,0.30);
+    backdrop-filter:blur(12px);
+
+    z-index:1000;
+}
+
+.logo{
+    height:100%;
+    display:flex;
+    align-items:center;
+}
+
+.logo img{
+    max-height:75px;
+    width:auto;
+    object-fit:contain;
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:28px;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:white;
+    font-size:15px;
+    transition:0.3s;
+    position:relative;
+}
+
+.nav-links a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-5px;
+    width:0%;
+    height:2px;
+    background:#63B3ED;
+    transition:0.3s;
+}
+
+.nav-links a:hover::after{
+    width:100%;
+}
+
+.navbar-login-btn{
+    background:#2563EB;
+
+    color:white;
+
+    border:none;
+
+    padding:12px 24px;
+
+    border-radius:35px;
+
+    cursor:pointer;
+
+    font-size:15px;
+    font-weight:600;
+
+    display:flex;
+    align-items:center;
+    gap:8px;
+
+    transition:0.3s;
+
+    text-decoration:none;
+}
+
+.navbar-login-btn:hover{
+
+    background:#1D4ED8;
+
+    transform:translateY(-2px);
+
+    box-shadow:0 8px 18px rgba(37,99,235,0.35);
+}
+
+/* MOBILE MENU */
+
+.menu-toggle{
+    display:none;
+    font-size:28px;
+    color:white;
+    cursor:pointer;
+}
+
+/* ================= CONTACT SECTION ================= */
+
+.contact-section{
+
+    width:100%;
+
+    min-height:100vh;
+
+    padding:140px 6% 80px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+/* ================= CONTACT CONTAINER ================= */
+
+.contact-container{
+    max-width:1300px;
+
+    width:100%;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    align-items:center;
+
+    gap:120px;
+
+    padding:0 20px;
+}
+
+/* ================= FORM ================= */
+
+.contact-form{
+
+    background:rgba(255,255,255,0.15);
+
+    backdrop-filter:blur(15px);
+
+    border:1px solid rgba(255,255,255,0.20);
+
+    border-radius:12px;
+
+    padding:32px;
+
+    max-width:470px;
+
+    width:100%;
+
+    box-shadow:0 12px 30px rgba(0,0,0,0.25);
+}
+
+.contact-form h1{
+
+    font-size:32px;
+
+    font-weight:700;
+
+    color:#FFFFFF;
+
+    margin-bottom:28px;
+}
+
+/* INPUT GROUP */
+
+.input-group{
+
+    position:relative;
+
+    margin-bottom:20px;
+}
+
+.input-group i{
+
+    position:absolute;
+
+    left:16px;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    color:#4B5563;
+
+    font-size:15px;
+}
+
+/* INPUTS */
+
+.input-group input,
+.input-group textarea{
+
+    width:100%;
+
+    background:#F3F4F6;
+
+    border:none;
+
+    outline:none;
+
+    border-radius:8px;
+
+    padding:0 16px 0 44px;
+
+    font-size:14px;
+
+    color:#111827;
+
+    font-family:'Poppins',sans-serif;
+}
+
+.input-group input{
+
+    height:48px;
+}
+
+.input-group textarea{
+
+    height:120px;
+
+    padding-top:16px;
+
+    resize:none;
+}
+
+.input-group input::placeholder,
+.input-group textarea::placeholder{
+
+    color:#4B5563;
+
+    font-size:14px;
+}
+
+/* BUTTON */
+
+.submit-btn{
+
+    width:100%;
+
+    border:none;
+
+    padding:14px 0;
+
+    border-radius:8px;
+
+    background:linear-gradient(to right,#1A365D,#2B4C7E);
+
+    color:#FFFFFF;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:0.35s;
+}
+
+.submit-btn:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 10px 20px rgba(0,0,0,0.25);
+}
+
+/* ================= RIGHT INFO ================= */
+
+.contact-info{
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    gap:32px;
+}
+
+.contact-info h2{
+
+    font-size:24px;
+
+    font-weight:600;
+
+    color:#FFFFFF;
+}
+
+/* INFO ITEM */
+
+.info-item{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:18px;
+}
+
+.info-item i{
+
+    color:white;
+
+    font-size:20px;
+
+    margin-top:4px;
+}
+
+.info-item p{
+
+    color:#E5E7EB;
+
+    font-size:16px;
+
+    line-height:28px;
+}
+
+/* SOCIAL BUTTONS */
+
+.social-icons{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:16px;
+
+    flex-wrap:wrap;
+
+    margin-top:10px;
+}
+
+.social-icons a{
+
+    width:50px;
+    height:50px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,0.12);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-decoration:none;
+
+    transition:0.3s;
+
+    backdrop-filter:blur(6px);
+}
+
+.social-icons a:hover{
+
+    background:#2563EB;
+
+    transform:translateY(-4px);
+}
+
+.social-icons i{
+
+    color:#FFFFFF;
+
+    font-size:22px;
+}
+
+/* ================= FOOTER ================= */
+
+.footer{
+
+    width:100%;
+
+    padding:22px 6%;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    border-top:1px solid rgba(255,255,255,0.08);
+
+    background:rgba(0,0,0,0.30);
+
+    color:#D1D5DB;
+
+    font-size:14px;
+
+    text-align:center;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:1100px){
+
+    .contact-container{
+
+        gap:60px;
+    }
+}
+
+@media(max-width:950px){
+
+    .contact-container{
+
+        grid-template-columns:1fr;
+
+        gap:45px;
+    }
+
+    .contact-form{
+
+        max-width:100%;
+    }
+
+    .contact-info{
+
+        text-align:center;
+
+        align-items:center;
+    }
+
+    .info-item{
+
+        justify-content:center;
+    }
+}
+
+@media(max-width:768px){
+
+    body{
+        background-attachment:scroll;
+    }
+
+    .navbar{
+
+        padding:0 20px;
+    }
+
+    .menu-toggle{
+        display:block;
+    }
+
+    .nav-links{
+        position:absolute;
+        top:90px;
+        left:0;
+        width:100%;
+        background:rgba(0,0,0,0.95);
+        flex-direction:column;
+        padding:25px 0;
+        gap:22px;
+        display:none;
+    }
+
+    .nav-links.active{
+        display:flex;
+    }
+
+    .navbar-login-btn{
+        display:none;
+    }
+
+    .contact-section{
+
+        padding:130px 20px 60px;
+    }
+
+    .contact-container{
+
+        padding:0;
+        gap:40px;
+    }
+
+    .contact-form{
+
+        padding:26px 20px;
+    }
+
+    .contact-form h1{
+
+        font-size:28px;
+        text-align:center;
+    }
+
+    .contact-info h2{
+
+        font-size:22px;
+    }
+
+    .info-item{
+
+        flex-direction:column;
+        align-items:center;
+        text-align:center;
+        gap:10px;
+    }
+
+    .info-item p{
+
+        font-size:15px;
+        line-height:26px;
+    }
+
+    .social-icons{
+
+        justify-content:center;
+    }
+}
+
+@media(max-width:480px){
+
+    .logo img{
+        max-height:60px;
+    }
+
+    .contact-form{
+
+        border-radius:10px;
+    }
+
+    .contact-form h1{
+
+        font-size:24px;
+    }
+
+    .input-group input,
+    .input-group textarea{
+
+        font-size:13px;
+    }
+
+    .submit-btn{
+
+        font-size:15px;
+    }
+
+    .social-icons a{
+
+        width:45px;
+        height:45px;
+    }
+
+    .social-icons i{
+
+        font-size:20px;
+    }
+
+    .footer{
+
+        font-size:13px;
+        line-height:24px;
+    }
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<nav class="navbar">
+
+    <div class="logo">
+
+        <img src="logo.png" alt="Logo">
+
+    </div>
+
+    <div class="menu-toggle" onclick="toggleMenu()">
+        <i class="fa-solid fa-bars"></i>
+    </div>
+
+    <div class="nav-links" id="navLinks">
+
+        <a href="index.html">Home</a>
+
+        <a href="index.html#services">Services</a>
+
+        <a href="Pricing.html">Pricing</a>
+
+        <a href="About Us.html">About Us</a>
+
+        <a href="Contact Us.html">Contact Us</a>
+
+    </div>
+
+    <button class="navbar-login-btn"
+onclick="window.location.href='tel:+917045537597'">
+
+<i class="fa-solid fa-phone"></i>
+Call Now
+
+</button>
+
+</nav>
+
+<!-- ================= CONTACT SECTION ================= -->
+
+<section class="contact-section">
+
+    <div class="contact-container">
+
+        <!-- LEFT -->
+
+        <div class="contact-form">
+
+            <h1>CONTACT US</h1>
+
+            <form onsubmit="sendEnquiry(event)">
+
+                <div class="input-group">
+
+                    <i class="fa-solid fa-user"></i>
+
+                    <input 
+                    type="text"
+                    id="name"
+                    placeholder="Your Name"
+                    required>
+
+                </div>
+
+                <div class="input-group">
+
+                    <i class="fa-solid fa-building"></i>
+
+                    <input 
+                    type="text"
+                    id="company"
+                    placeholder="Company Name (Optional)">
+
+                </div>
+
+                <div class="input-group">
+
+                    <i class="fa-solid fa-envelope"></i>
+
+                    <input 
+                    type="email"
+                    id="email"
+                    placeholder="Email Address"
+                    required>
+
+                </div>
+
+                <div class="input-group">
+
+                    <i class="fa-solid fa-phone"></i>
+
+                    <input 
+                    type="text"
+                    id="phone"
+                    placeholder="Phone Number"
+                    required>
+
+                </div>
+
+                <div class="input-group">
+
+                    <i class="fa-solid fa-message"></i>
+
+                    <textarea 
+                    id="message"
+                    placeholder="Your Message"
+                    required></textarea>
+
+                </div>
+
+                <button type="submit"
+                class="submit-btn">
+
+                    SEND ENQUIRY
+
+                </button>
+
+            </form>
+
+        </div>
+
+        <!-- RIGHT -->
+
+        <div class="contact-info">
+
+            <h2>OUR OFFICE</h2>
+
+            <div class="info-item">
+
+                <i class="fa-solid fa-location-dot"></i>
+
+                <p>
+                    Bhor Roadlines,<br>
+                    Mumbai, Maharashtra,<br>
+                    India
+                </p>
+
+            </div>
+
+            <div class="info-item">
+
+                <i class="fa-solid fa-phone"></i>
+
+                <p>
+                    +91 7045537597
+                </p>
+
+            </div>
+
+            <div class="info-item">
+
+                <i class="fa-solid fa-envelope"></i>
+
+                <p>
+                    vikasbhor83@gmail.com
+                </p>
+
+            </div>
+
+            <!-- SOCIAL ICONS -->
+
+            <div class="social-icons">
+
+                <!-- WHATSAPP -->
+
+                <a href="https://wa.me/917045537597"
+                target="_blank">
+
+                    <i class="fa-brands fa-whatsapp"></i>
+
+                </a>
+
+                <!-- EMAIL -->
+
+                <a href="mailto:vikasbhor83@gmail.com">
+
+                    <i class="fa-solid fa-envelope"></i>
+
+                </a>
+
+                <!-- FACEBOOK -->
+
+                <a href="https://facebook.com/share/1Dtjre6CSL/"
+                target="_blank">
+
+                    <i class="fa-brands fa-facebook-f"></i>
+
+                </a>
+
+                <!-- INSTAGRAM -->
+
+                <a href="https://instagram.com/bhor.vikas_official"
+                target="_blank">
+
+                    <i class="fa-brands fa-instagram"></i>
+
+                </a>
+
+                <!-- LOCATION -->
+
+                <a href="https://maps.app.goo.gl/KNUw9suYFcgMbRJ9A?g_st=aw"
+                target="_blank">
+
+                    <i class="fa-solid fa-location-dot"></i>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="footer">
+
+<p>
+© 2026 Bhor Roadlines. All rights reserved.
+</p>
+
+</footer>
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+function toggleMenu(){
+
+document
+.getElementById("navLinks")
+.classList
+.toggle("active");
+
+}
+
+function sendEnquiry(event){
+
+event.preventDefault();
+
+let name =
+document.getElementById("name").value;
+
+let company =
+document.getElementById("company").value;
+
+let email =
+document.getElementById("email").value;
+
+let phone =
+document.getElementById("phone").value;
+
+let message =
+document.getElementById("message").value;
+
+let whatsappMessage =
+`🚛 *NEW ENQUIRY*
+
+👤 Name: ${name}
+
+🏢 Company: ${company}
+
+📧 Email: ${email}
+
+📞 Phone: ${phone}
+
+💬 Message:
+${message}`;
+
+let whatsappURL =
+`https://wa.me/918169008395?text=${encodeURIComponent(whatsappMessage)}`;
+
+window.open(whatsappURL, "_blank");
+
+}
+
+</script>
+
+</body>
+</html>
